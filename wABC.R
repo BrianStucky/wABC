@@ -1,21 +1,21 @@
-#This code describes the computation of the wABC (Edelen, Stucky, and Chandra, 2013)
+#Described below is the 'weighted area between the curves' (wABC; Edelen, Stucky, and Chandra, 2013)
 #The code is applicable to 2-PL, 3-PL, and GRM models
-#The example creates the expected scores curves from Figure 1 in Stucky et al. (2014)
+#The example creates the expected scores curves and wABC from Figure 1 in Stucky et al. (2014)
 #Comments highlight user inputs
 
 theta <- seq(-5,5,.1)
-RefPDF <- dnorm(theta, mean = 0, sd = 1, log = FALSE) #mean and SD of reference group
+RefPDF <- dnorm(theta, mean = 0, sd = 1, log = FALSE) #Reference group mean and SD 
 RefPDF <- normalPDF/sum(normalPDF)
-FocPDF <-  dnorm(theta, mean = -0.29, sd = 1.06, log = FALSE) #mean and SD of focal group
+FocPDF <-  dnorm(theta, mean = -0.29, sd = 1.06, log = FALSE) #Focal group mean and SD
 FocPDF <- FocPDF/sum(FocPDF)
 
 Nref <- 421  #Reference group sample size
 Nfoc <- 1825 #Focal group sample size
 
-aj <- c(.53,1.18) #Enter the slope for reference group and slope for focal group
+aj <- c(.53,1.18) #Enter the slope for reference group and the slope for focal group (there is no scaling constant in the model)
 b1 <- c(-5.43,-3.25,-1.1,0.87)   #Enter the thresholds for reference group
 b2 <- c(-2.45,-1.36,-0.19,0.91)   #Enter the thresholds for focal group
-c <- c(0,0) #Enter guessing parameter
+c <- c(0,0) #Enter guessing parameter for 3-PL
 
 Ncats <- 5 #Enter the number of response categories for the item
 
@@ -68,3 +68,4 @@ text(.4*min(theta),.8*length(b1), paste0 ("wABC =", wABC=(round(wABC,digits=2)))
 #and Cai, L. (2014). Development of the PROMIS® Negative Psychosocial 
 #Expectancies of Smoking item banks. Nicotine and Tobacco Research, 16(Suppl 3), 
 #S232-S240.
+
