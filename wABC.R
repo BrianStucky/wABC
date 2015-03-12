@@ -15,7 +15,7 @@ Nfoc <- 1825 #Focal group sample size
 aj <- c(.53,1.18) #Enter the slope for reference group and the slope for focal group (there is no scaling constant in the model)
 b1 <- c(-5.43,-3.25,-1.1,0.87)   #Enter the thresholds for reference group
 b2 <- c(-2.45,-1.36,-0.19,0.91)   #Enter the thresholds for focal group
-c <- c(0,0) #Enter guessing parameter for 3-PL
+c <- c(0,0) #Enter guessing parameters for reference and focal groups (3-PL ony)
 
 Ncats <- 5 #Enter the number of response categories for the item
 
