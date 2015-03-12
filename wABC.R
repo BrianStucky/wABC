@@ -4,8 +4,8 @@
 #Comments highlight user inputs
 
 theta <- seq(-5,5,.1)
-normalPDF <- dnorm(theta, mean = 0, sd = 1, log = FALSE) #mean and SD of reference group
-normalPDF <- normalPDF/sum(normalPDF)
+RefPDF <- dnorm(theta, mean = 0, sd = 1, log = FALSE) #mean and SD of reference group
+RefPDF <- normalPDF/sum(normalPDF)
 FocPDF <-  dnorm(theta, mean = -0.29, sd = 1.06, log = FALSE) #mean and SD of focal group
 FocPDF <- FocPDF/sum(FocPDF)
 
@@ -17,9 +17,10 @@ b1 <- c(-5.43,-3.25,-1.1,0.87)   #Enter the thresholds for reference group
 b2 <- c(-2.45,-1.36,-0.19,0.91)   #Enter the thresholds for focal group
 c <- c(0,0) #Enter guessing parameter
 
+Ncats <- 5 #Enter the number of response categories for the item
+
 bj <- list(b1,b2)
 nitems <- length(aj)
-Ncats <- 5 #Enter the number of response categories for the item
 
 Tlist <- NULL
 for (i in 1:nitems) {
@@ -46,7 +47,7 @@ for (i in 1:nitems) {
     }
   }
 }
-wABC_ref <- sum(abs(TCC[[1]]-TCC[[2]])*normalPDF)
+wABC_ref <- sum(abs(TCC[[1]]-TCC[[2]])*RefPDF)
 wABC_foc <- sum(abs(TCC[[1]]-TCC[[2]])*FocPDF)
 wABC <- (wABC_foc*(Nfoc/(Nfoc+Nref)))+ (wABC_ref*(Nref/(Nfoc+Nref)))
 
