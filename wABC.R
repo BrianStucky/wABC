@@ -1,5 +1,5 @@
-#Described below is the 'weighted area between the curves' (wABC; Edelen, Stucky, and Chandra, 2013)
-#The code is applicable to 2-PL, 3-PL, and GRM models
+#Described below is code that computes the 'weighted area between the curves' (wABC; Edelen, Stucky, and Chandra, 2013)
+#The code evaluates DIF magnitude for 2-PL, 3-PL, and GRM models
 #The example creates the expected scores curves and wABC from Figure 1 in Stucky et al. (2014)
 #Comments highlight user inputs
 
