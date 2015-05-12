@@ -5,7 +5,7 @@
 
 theta <- seq(-5,5,.1)
 RefPDF <- dnorm(theta, mean = 0, sd = 1, log = FALSE) #Reference group mean and SD 
-RefPDF <- normalPDF/sum(normalPDF)
+RefPDF <- RefPDF/sum(RefPDF)
 FocPDF <-  dnorm(theta, mean = -0.29, sd = 1.06, log = FALSE) #Focal group mean and SD
 FocPDF <- FocPDF/sum(FocPDF)
 
